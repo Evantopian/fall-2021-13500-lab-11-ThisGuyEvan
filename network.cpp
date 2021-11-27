@@ -6,7 +6,7 @@
 
 bool isAlphaNum(std::string s){
     for (char ch : s){
-        if (!isalpha(ch) || !isdigit(ch) && ch == ' '){
+        if (!isalnum(ch)){
             return true;
         }
     }
@@ -15,7 +15,7 @@ bool isAlphaNum(std::string s){
 
 
 bool Network::addUser(std::string usrn, std::string dspn){
-    if (numUsers > MAX_USERS || isAlphaNum(usrn) || isAlphaNum(dspn)){
+    if (numUsers > MAX_USERS-1 || isAlphaNum(usrn)){
         return false;
     }
 
@@ -42,13 +42,41 @@ int Network::findID(std::string usrn){
 }
 
 bool Network::follow(std::string usrn1, std::string usrn2){
+    int count = 0;
     for (Profile pf : profiles){
-        if (pf.getUsername() == usrn1){
-
+        if (pf.getUsername() == usrn1 || pf.getUsername() == usrn2){
+            count++;
         }
     } 
-
+    if (count < 2){
+        return false;
+    }
+    following[findID(usrn1)][findID(usrn2)] = true;
+    return true;
 }
+
+
+void Network::printDot(){
+    std::cout << "digraph {\n";
+    for (Profile pf : profiles){
+        if (pf.getUsername() != ""){
+            std::cout << " \"@" << pf.getDisplayName() << "\"\n";
+        
+        }
+    }
+    
+    std::cout << "\n";
+    for (int row = 0; row < MAX_USERS; row++){
+        for (int col = 0; col < MAX_USERS; col++){
+            if (following[row][col]){
+                std::cout << " \"@" << profiles[row].getDisplayName()
+                          << "\" -> \"@" << profiles[col].getDisplayName() << "\"\n"; 
+            }
+        }
+    }
+    std::cout << "}" << std::endl;
+}
+
 
 
 Network::Network(){
