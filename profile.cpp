@@ -9,6 +9,18 @@ Assignment: Lab 11
 #include "profile.h"
 
 
+Profile::Profile(std::string usrn, std::string dspn) {
+    username = usrn;
+    displayname = dspn;
+}
+
+
+Profile::Profile() {
+    username = "";
+    displayname = "";
+}
+
+
 std::string Profile::getUsername() {
 
     return username;
@@ -29,13 +41,3 @@ void Profile::setDisplayName(std::string dspn) {
 }
 
 
-Profile::Profile(std::string usrn, std::string dspn) {
-    username = usrn;
-    displayname = dspn;
-}
-
-
-Profile::Profile() {
-    username = "";
-    displayname = "";
-}
