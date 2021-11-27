@@ -4,21 +4,9 @@
 #include "network.h"
 
 
-int Network::findID(std::string usrn){
-    int count = 0;
-    for (Profile pf : profiles){
-        if (pf.getUsername() == usrn){
-            return count;
-        }
-        count++;
-    }
-    return -1;
-}
-
-
 bool isAlphaNum(std::string s){
     for (char ch : s){
-        if (!isalpha(ch) || isdigit(ch) || ch == ' '){
+        if (!isalpha(ch) || !isdigit(ch) && ch == ' '){
             return true;
         }
     }
@@ -42,6 +30,33 @@ bool Network::addUser(std::string usrn, std::string dspn){
 }
 
 
+int Network::findID(std::string usrn){
+    int count = 0;
+    for (Profile pf : profiles){
+        if (pf.getUsername() == usrn){
+            return count;
+        }
+        count++;
+    }
+    return -1;
+}
+
+bool Network::follow(std::string usrn1, std::string usrn2){
+    for (Profile pf : profiles){
+        if (pf.getUsername() == usrn1){
+
+        }
+    } 
+
+}
+
+
 Network::Network(){
     numUsers = 0;
+
+    for (int row = 0; row < MAX_USERS; row++){
+        for (int col = 0; col < MAX_USERS; col++){
+           following[row][col] = false; 
+        }
+    }
 }
