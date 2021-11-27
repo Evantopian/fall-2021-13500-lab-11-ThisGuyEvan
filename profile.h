@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 
 
@@ -16,5 +17,6 @@ class Profile {
       // Return name in the format: "displayname (@username)"
       std::string getFullName();
       // Change display name
+      std::string getDisplayName();
       void setDisplayName(std::string dspn);
 };

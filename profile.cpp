@@ -4,20 +4,29 @@
 
 std::string Profile::getUsername(){
 
-  return Profile::username;
+  return username;
 }
 
 
 std::string Profile::getFullName(){
-  return Profile::displayname + " (@" + Profile::username + ")";
+  return displayname + " (@" + username + ")";
 }
 
-void Profile::setDisplayName(std::string dispn){
-  Profile::displayname = dispn;
+std::string Profile::getDisplayName(){
+  return displayname;
+}
+
+void Profile::setDisplayName(std::string dspn){
+  displayname = dspn;
 }
 
 
-Profile::Profile(std::string usrn, std::string dispn){
-  Profile::username = usrn;
-  Profile::displayname = dispn;
+Profile::Profile(std::string usrn, std::string dspn){
+  username = usrn;
+  displayname = dspn;
+}
+
+Profile::Profile(){
+  username = "";
+  displayname = "";
 }
