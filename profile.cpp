@@ -9,38 +9,33 @@ Assignment: Lab 11
 #include "profile.h"
 
 
-std::string Profile::getUsername()
-{
+std::string Profile::getUsername() {
 
-  return username;
+    return username;
 }
 
 
-std::string Profile::getFullName()
-{
-  return displayname + " (@" + username + ")";
+std::string Profile::getFullName() {
+    return displayname + " (@" + username + ")";
 }
 
-std::string Profile::getDisplayName()
-{
-  return displayname;
-}
-
-
-void Profile::setDisplayName(std::string dspn)
-{
-  displayname = dspn;
+std::string Profile::getDisplayName() {
+    return displayname;
 }
 
 
-Profile::Profile(std::string usrn, std::string dspn)
-{
-  username = usrn;
-  displayname = dspn;
+void Profile::setDisplayName(std::string dspn) {
+    displayname = dspn;
 }
 
-Profile::Profile()
-{
-  username = "";
-  displayname = "";
+
+Profile::Profile(std::string usrn, std::string dspn) {
+    username = usrn;
+    displayname = dspn;
+}
+
+
+Profile::Profile() {
+    username = "";
+    displayname = "";
 }

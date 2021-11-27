@@ -8,8 +8,8 @@ Assignment: Lab 11
 #include <iostream>
 #include "network.h"
 
-int main()
-{
+
+int main() {
     Network nw;
     // add three users
     nw.addUser("mario", "Mario");
@@ -27,8 +27,7 @@ int main()
     // add a user who does not follow others
     nw.addUser("wario", "Wario");
 
-    for (int i = 2; i < 6; i++)
-    {
+    for (int i = 2; i < 6; i++) {
         std::string usrn = "mario" + std::to_string(i);
         std::string dspn = "Mario " + std::to_string(i);
         nw.addUser(usrn, dspn);
