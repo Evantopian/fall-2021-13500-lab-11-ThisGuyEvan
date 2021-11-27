@@ -19,7 +19,7 @@ public:
     // Attempts to sign up a new user with specified username and displayname
     // return true if the operation was successful, otherwise return false
     bool addUser(std::string usrn, std::string dspn);
-    
+
     bool follow(std::string usrn1, std::string usrn2);
 
     void printDot();

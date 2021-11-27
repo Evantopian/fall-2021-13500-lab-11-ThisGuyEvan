@@ -1,3 +1,10 @@
+/*
+Author: Evan Huang
+Course: CSCI-135
+Instructor: Mike Zamansky
+Assignment: Lab 11
+    - Test Cases for tasks A-C.
+*/
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #define CHECK DOCTEST_CHECK
 #include "doctest.h"

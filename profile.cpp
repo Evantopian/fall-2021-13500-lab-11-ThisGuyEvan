@@ -1,32 +1,46 @@
+/*
+Author: Evan Huang
+Course: CSCI-135
+Instructor: Mike Zamansky
+Assignment: Lab 11
+    - Functions revolving around the profile class.
+*/
 #include <iostream>
 #include "profile.h"
 
 
-std::string Profile::getUsername(){
+std::string Profile::getUsername()
+{
 
   return username;
 }
 
 
-std::string Profile::getFullName(){
+std::string Profile::getFullName()
+{
   return displayname + " (@" + username + ")";
 }
 
-std::string Profile::getDisplayName(){
+std::string Profile::getDisplayName()
+{
   return displayname;
 }
 
-void Profile::setDisplayName(std::string dspn){
+
+void Profile::setDisplayName(std::string dspn)
+{
   displayname = dspn;
 }
 
 
-Profile::Profile(std::string usrn, std::string dspn){
+Profile::Profile(std::string usrn, std::string dspn)
+{
   username = usrn;
   displayname = dspn;
 }
 
-Profile::Profile(){
+Profile::Profile()
+{
   username = "";
   displayname = "";
 }
