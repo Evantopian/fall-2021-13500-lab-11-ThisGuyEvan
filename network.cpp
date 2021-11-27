@@ -67,7 +67,6 @@ void Network::printDot() {
     for (Profile pf : profiles) {
         if (pf.getUsername() != "") {
             std::cout << " \"@" << pf.getDisplayName() << "\"\n";
-
         }
     }
 
